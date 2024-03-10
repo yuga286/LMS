@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #left-section {
+            width: 20%; /* Adjust the width as per your design */
+            background-color: #f2f2f2; /* Set background color */
+            float: left; /* Float the left section to the left */
+            height: 100vh; /* Make the left section full height */
+            padding: 20px;
+        }
+
+        #main-content {
+            margin-left: 20%; /* Set margin to accommodate the left section */
+            padding: 20px; /* Add padding for content spacing */
+        }
+    </style>
+</head>
+<body>
+    <div id="main-content">
+        <!-- Main content of your page goes here -->
+        <h1>Main Content</h1>
+        <p>This is the main content of your page.</p>
+        {% if user_data %}
+        <h1>Welcome, {{ user_data["Admin_User_Name"]|default('N/A') }}</h1>
+        <p>ID: {{ user_data["Admin_ID"]|default('N/A') }}</p>
+        <p>First Name: {{ user_data["Admin_First_Name"]|default('N/A') }}</p>
+        <p>Last Name: {{ user_data["Admin_Last_Name"]|default('N/A') }}</p>
+        <!-- Add other user data fields as needed -->
+    {% else %}
+        <p>User not found</p>
+    {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{
+    "english": [
+      {
+        "book_Name": "The Great Gatsby",
+        "book_Author": "F. Scott Fitzgerald",
+        "published_year": 1925,
+        "genre": "Fiction",
+        "ISBN": "978-0743273565",
+        "book_count": 1
+      },
+      {
+        "book_Name": "To Kill a Mockingbird",
+        "book_Author": "Harper Lee",
+        "published_year": 1960,
+        "genre": "Fiction",
+        "ISBN": "978-0061120084",
+        "book_count": 1
+      },
+      {
+        "book_Name": "1984",
+        "book_Author": "George Orwell",
+        "published_year": 1949,
+        "genre": "Science Fiction",
+        "ISBN": "978-0451524935",
+        "book_count": 1
+      }
+    ],
+    "hindi": [
+      {
+        "book_Name": "Gatbe Jeevan",
+        "book_Author": "Francis Scott Fitzgerald",
+        "published_year": 1925,
+        "genre": "Fiction",
+        "ISBN": "978-8125500362",
+        "book_count": 1
+      },
+      {
+        "book_Name": "To Kill a Mockingbird",
+        "book_Author": "Harper Lee",
+        "published_year": 1960,
+        "genre": "Fiction",
+        "ISBN": "978-9351866287",
+        "book_count": 1
+      }
+    ]
+  }

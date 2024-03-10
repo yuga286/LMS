@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            width: 300px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        form input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid black;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #left-section {
+            width: 20%; /* Adjust the width as per your design */
+            background-color: #f2f2f2; /* Set background color */
+            float: left; /* Float the left section to the left */
+            height: 100vh; /* Make the left section full height */
+            padding: 20px;
+        }
+
+        #main-content {
+            margin-left: 20%; /* Set margin to accommodate the left section */
+            padding: 20px; /* Add padding for content spacing */
+        } 
+    </style>
+</head>
+<body>
+    <h1>this is for book removel</h1>
+    <div class="main-content">
+        <div class="container">
+            <form action="/exit_book" method="post">
+                <label for="title">Book Title:</label>
+                <input type="text" id="title" name="bookName" required>
+
+                <label for="year">How many books you want to remove?</label>
+                <input type="number" id="year" name="count" required>
+
+                <input type="hidden" name="exitPage" value="addition_page">
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

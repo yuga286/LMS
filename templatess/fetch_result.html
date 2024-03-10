@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <style>
+        #left-section {
+            width: 20%; /* Adjust the width as per your design */
+            background-color: #f2f2f2; /* Set background color */
+            float: left; /* Float the left section to the left */
+            height: 100vh; /* Make the left section full height */
+            padding: 20px;
+        }
+
+        #main-content {
+            /*background-image: url('../static/images/main2.jpg');
+            background-size: cover;
+            background-position: center;*/
+            height: 100vh;  /* Adjust the height as needed */
+        }
+       
+    </style>
+</head>
+<body>
+   <div id="left-section">
+
+   </div>
+    <div id="main-content">
+       
+           <form action="/fetch">
+            {% csrf_token %}
+            {% if results %}
+            <p>Book Name: {{ request.session.results.Book_Name|default_if_none:"N/A" }}</p>
+            <p>Book Count: {{ request.session.results.Book_Count|default_if_none:"N/A" }}</p>
+        {% else %}
+            <p>Book data not found</p>
+        {% endif %}
+           </form>
+        
+
+
+    </div>
+</body>
+</html>
