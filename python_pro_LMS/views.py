@@ -125,8 +125,11 @@ def login(request):
 
 def fetch(request):
     if request.method == 'POST':
-        search_term = request.POST.get('search_term', '')  # Assuming the search term comes from a form input with the name 'search_term'
+        print("jsshdu")
+        search_term = request.POST.get('bookname', '')
+        print(search_term)# Assuming the search term comes from a form input with the name 'search_term'
         results = Book.objects.filter(Book_Name__icontains=search_term)
+        print(results)
         # Your existing code to fetch results
         return render(request, 'fetch_result.html', {'results': results, 'user_info': request.session.get('user_info')})
     else:

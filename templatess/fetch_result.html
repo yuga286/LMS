@@ -31,12 +31,12 @@
        
            <form action="/fetch">
             {% csrf_token %}
-            {% if results %}
-            <p>Book Name: {{ request.session.results.Book_Name|default_if_none:"N/A" }}</p>
-            <p>Book Count: {{ request.session.results.Book_Count|default_if_none:"N/A" }}</p>
-        {% else %}
-            <p>Book data not found</p>
-        {% endif %}
+            {% for book in results %}
+        <h2>{{ book.Book_Name }}</h2>
+        <p>Book Count: {{ book.Book_Count }}</p>
+        <p>Publication Year: {{ book.Publication_Year }}</p>
+        <p>Publisher: {{ book.Publisher }}</p>
+    {% endfor %}
            </form>
         
 
