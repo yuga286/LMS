@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div id="main-content">
+        <form method="POST" action="{% url 'borrow' %}" id="myForm">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% if error %}
+                <p>{{ error }}</p>
+            {% endif %}
+            {% if success %}
+                <p>{{ success }}</p>
+            {% endif %}
+            <div class="form-row">
+                <label class="form-row-inner">
+                    <input type="text" name="bookname" id="bookname" class="input-text" required>
+                    <span class="label">Enter the Book Name</span>
+                    <span class="border"></span>
+                </label>
+            </div>
+
+            <div class="form-row">
+                <label class="form-row-inner">
+                    <input type="number" name="days" id="days" class="input-text" required>
+                    <span class="label">For how many days do you want the book?</span>
+                    <span class="border"></span>
+                </label>
+            </div>
+
+            <div class="form-row-last">
+                <button type="submit" id="submitBtn">Search</button>
+            </div>
+        </form>
+        <p id="abc">
+            hi this is a message
+        </p>
+    </div>
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            var formData = new FormData(this); // Serialize form data
+
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Update the message paragraph with the response message
+                document.getElementById('abc').textContent = data.message;
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

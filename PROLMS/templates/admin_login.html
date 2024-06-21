@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Form-v8 by Colorlib</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body class="form-v8">
+	<from action="admin_login/" method="post">
+		<div class="page-content">	
+		<div class="form-v8-content">
+			<div class="form-left">
+				<img src="../static/images/shelf.jpg" alt="form">
+			</div>
+			<div class="form-right">
+				<div class="tab">
+					<div class="tab-inner">
+						<button class="tablinks"  id="defaultOpen">Sign In</button>
+					</div>
+				</div>
+				<form class="form-detail" action="/admin_login/" method="post">
+					{% csrf_token %}
+					<div class="tabcontent" id="sign-up">
+						<div class="form-row">
+							<label class="form-row-inner">
+								<input type="text" name="User_Name" id="full_name" class="input-text" required>
+								<span class="label">Username</span>
+		  						<span class="border"></span>
+							</label>
+						</div>
+						<div class="form-row">
+							<label class="form-row-inner" 	>
+								<input type="password" name="password" id="password" class="input-text" required>
+								<span class="label">Password</span>
+								<span class="border"></span>
+							</label>
+						</div>
+						<div class="form-row-last">
+							<button onclick="window.location.href='/admin_dashboard'" action="/admin_dashboard">Login</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+</form>
+	
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

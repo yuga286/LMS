@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <div id="main-content">
+        <form method="POST" action="{% url 'fetch' %}">
+            {% csrf_token %}
+            <div class="form-row">
+                <label class="form-row-inner">
+                    <input type="text" name="bookname" id="bookname" class="input-text" required>
+                    <span class="label">Enter the Book Name</span>
+                    <span class="border"></span>
+                </label>
+            </div>
+
+            <div class="form-row-last">
+                <button type="submit" id="submit">Search</button>
+            </div>            
+            
+        </form>
+    </div>
+</body>
+
+</html>

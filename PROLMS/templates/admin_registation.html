@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Registration</title>
+	<link rel="icon" href="../static/images/book.png" type="image/x-icon">
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Main Style Css -->
+     <link rel="stylesheet" href="../static/style.css"/> 
+	
+</head>
+<body class="form-v9" >
+	
+	<div>
+		<nav>
+			<ul>
+				<li><a href="{% url 'home' %}">HOME</a></li>
+				<li><a href="{% url 'student_login' %}">Login</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div class="page-content"  >
+		<div class="form-v9-content" >
+			<form class="form-detail" action="/admin_registation" method="post">
+				<h2>Admin Registration Form</h2>
+				<div class="form-row-total">
+					<div class="form-row">
+						<input type="text" name="First_Name" id="first-name" class="input-text" placeholder="First Name" required>
+					</div>
+					<div class="form-row">
+						<input type="text" name="Last_Name" id="last-name" class="input-text" placeholder="Last Name" required>
+					</div>
+				</div>
+				<div class="form-row-total">
+					<div class="form-row">
+						<input type="text" name="email" id="your-email" class="input-text" placeholder="Your Email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+					</div>
+                    <div class="form-row">
+						<input type="text" name="User_Name" id="user-name" class="input-text" placeholder="User Name" required>
+					</div>
+				</div>
+				<div class="form-row-total">
+					<div class="form-row">
+						<input type="text" name="Contact_Number" id="Contact_Number" class="input-text" placeholder="Your Contact Number" required>
+					</div>
+				</div>
+				<div class="form-row-total">
+					<div class="form-row">
+						<input type="password" name="password" id="password" class="input-text" placeholder="Your Password" required>
+					</div>
+					<div class="form-row">
+						<input type="password" name="confirmPassword" id="confirm-password" class="input-text" placeholder="Confirm Password" required>
+						<div id="error-message" class="error-message"></div>
+					</div>
+				</div>
+				<div class="form-row-last">
+					<button onclick="window.location.href='home'" class="register" action="/admin_registation">Register</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
