@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'lms',
     'tailwind',
     'app',
-    'django-browser-reload'
+    'django_browser_reload',
 ]
 
 TAILWIND_APP_NAME = 'app'
